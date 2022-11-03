@@ -54,7 +54,7 @@ def updateCloudflareDnsRecord(zone_id, record_id, record_type, record_name, reco
         'Content-Type': 'application/json',
     }
 
-    data = '{"type":"'+record_type+'","name":"'+record_name+'","content":"'+record_value+'","ttl":1,"proxied":false}'
+    data = '{"type":"'+record_type+'","name":"'+record_name+'","content":"'+record_value+'","ttl":60,"proxied":false}'
     
     response = requests.put(uri, headers=headers, data=data)
 

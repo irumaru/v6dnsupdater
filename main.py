@@ -1,8 +1,8 @@
+import time
+
 import cloudflare
 import interface
 from log import logger
-
-import time
 
 from config import CLOUDFLARE_RECORD_ID, CLOUDFLARE_RECORD_NAME, CLOUDFLARE_ZONE_ID, INTERFACE, LOOP_INTERVAL, ONLINE_CHECK_ADDRESS
 

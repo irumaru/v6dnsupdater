@@ -4,6 +4,7 @@
 このプロジェクトを/usr/local/v6dnsupdaterにclone
 pythonモジュール、psutilをインストール
 config.sample.yamlをconfig.yamlにコピーして編集
+config.yamlのパーミッションを700に変更
 v6dnsupdater.serviceを/etc/systemd/system/v6dnsupdater.serviceへシンボリックを作成
 systemctl enable v6dnsupdaterを実行
 

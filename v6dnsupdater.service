@@ -1,0 +1,12 @@
+[Unit]
+Description = v6dnsupdater
+
+[Service]
+ExecStart = python3 /usr/local/dnsupdater/main.py
+Restart = always
+Type = simple
+StandardOutput = append:/var/log/dnsupdater
+StandardError = append:/var/log/dnsupdater
+
+[Install]
+WantedBy = multi-user.target

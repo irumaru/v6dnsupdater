@@ -1,0 +1,9 @@
+一番最近特定のインターフェス設定された変動IPv6アドレスを検出して、Cloudflareの指定DNSレコードを更新するプログラム
+
+使い方
+config.sample.yamlをconfig.yamlにコピーして編集
+v6dnsupdater.serviceを/etc/systemd/serviceに移動
+systemctl enable v6dnsupdaterを実行
+
+補助ツール
+dnsexploar.pyでゾーンIDやレコードIDを調べる

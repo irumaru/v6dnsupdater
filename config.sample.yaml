@@ -1,0 +1,11 @@
+version: 0.9
+cloudflare: #CloudflareAPIの資格情報
+  email: ""
+  appKey: ""
+  record: #更新するDNSレコードの設定
+    zoneId: ""
+    recordId: ""
+    name: ""
+loopInterval: 1 #秒ごとにアドレス更新を確認
+interface: "" #DHCPで変動アドレスが設定されているインターフェス(例: ens18)
+onlineCheckAddress: "2606:4700:4700::1111" #インターネット接続の確認先

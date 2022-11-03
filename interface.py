@@ -40,10 +40,10 @@ def updateV6GlobalAddressList(interface):
 
     # エラー検証
     if(globalAddressCount == 0):
-        logger("No global address.")
+        logger("ERROR: No global address.")
         raise getAddressError()
     if(1 < newAddressCount):
-        logger("%d new addresses found. number of addresses must be 1." % (newAddressCount))
+        logger("ERROR: %d new addresses found. number of addresses must be 1." % (newAddressCount))
         raise getAddressError()
 
 # Interfaceに一番最近設定されたグローバルアドレスを取得

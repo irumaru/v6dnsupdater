@@ -15,13 +15,13 @@ class ApiCallError(Exception):
 # APIのレスポンスを解釈
 def apiInterpretation(data):
     if(data.status_code != 200):
-        logger("Api call error. HTTP response status code = %d. Must be 200." % data.status_code)
+        logger("ERROR: Api call error. HTTP response status code = %d. Must be 200." % data.status_code)
         raise ApiCallError()
     
     data = data.json()
 
     if(data['success'] != True):
-        logger("Api response error. Success is not True. Errors = %s" % json.dumps(data['errors']))
+        logger("ERROR: Api response error. Success is not True. Errors = %s" % json.dumps(data['errors']))
         raise ApiCallError()
     
     return data['result']

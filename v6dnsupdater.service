@@ -6,7 +6,6 @@ WorkingDirectory = /usr/local/v6dnsupdater
 ExecStart = python3 /usr/local/v6dnsupdater/main.py
 Restart = always
 Type = simple
-StandardOutput = append:/var/log/v6dnsupdater
 StandardError = append:/var/log/v6dnsupdater
 
 [Install]

@@ -1,5 +1,5 @@
 概要
-一番最近特定のインターフェス設定された変動IPv6アドレスを検出して、Cloudflareの指定DNSレコードを更新するプログラム
+特定のインターフェスに一番最近設定された変動IPv6アドレスを検出して、Cloudflareの指定DNSレコードを更新するプログラム
 
 特徴
 インターフェスに自動設定される変動IPv6アドレスの変更を検出するためcheckip.aw*.comなどへアクセスしない。
@@ -7,11 +7,21 @@
 
 使い方
 このプロジェクトを/usr/local/v6dnsupdaterにclone
-pythonモジュール、psutilをインストール
 config.sample.yamlをconfig.yamlにコピーして編集
 config.yamlのパーミッションを700に変更
 v6dnsupdater.serviceを/etc/systemd/system/v6dnsupdater.serviceへシンボリックを作成
 systemctl enable v6dnsupdaterを実行
+
+制限
+1度の起動中に同じアドレスが異なるアドレスを挟み2回設定されると2回目は更新されずに、直前のアドレスのままになる。
+起動時またはloopInterval秒以内に2個以上のアドレスが検出されると例外を出す。
+※DHCPリース時間を使う方法を思いついたが、ubuntu22でdhcpリース時間を取得する方法がわからんので、知ってたら教えてください。
+
+前提
+ubuntu22
+python3
+python3 module psutil
+iputils-ping
 
 補助ツール
 dnsexploar.pyでゾーンIDやレコードIDを調べる

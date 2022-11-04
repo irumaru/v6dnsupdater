@@ -1,5 +1,6 @@
 [Unit]
 Description = v6dnsupdater
+After=network.target nss-lookup.target
 
 [Service]
 WorkingDirectory = /usr/local/v6dnsupdater

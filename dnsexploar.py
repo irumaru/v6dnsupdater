@@ -18,6 +18,6 @@ zoneId = sites[select]['id']
 
 records = cloudflare.getCloudflareDnsRecordId(zoneId)
 
-print('RecordID                            TYPE     NAME')
+print("%32s    %5s    %s" % ('RecordID'.ljust(32, ' '), 'TYPE ', 'NAME=>VALUE'))
 for record in records:
-    print("%s    %5s    %s" % (record['id'], record['type'], record['name']))
+    print("%s    %5s    %s" % (record['id'], record['type'], record['name'] + ' => ' + record['content']))

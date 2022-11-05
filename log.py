@@ -7,6 +7,9 @@ def logger(message):
     now = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
     message = "[%s]: %s" % (now, message)
 
+    # 標準出力
+    print(message)
+
     # ファイルに出力
     with open(LOG_PATH, 'a') as p:
         print(message, file=p)
